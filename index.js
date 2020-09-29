@@ -9,7 +9,11 @@ const app = express();
 conectarDB();
 
 //habilitar cors
-app.use(cors());
+var corsOptions = {
+    origin: 'https://hidden-garden-05738.herokuapp.com/',
+    optionsSuccessStatus: 200
+  }
+app.use(cors(corsOptions));
 
 //habilitar express.json
 app.use(express.json({ extended: true }));
